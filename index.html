@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple HTML Cash Counter</title>
+	<style>
+td.sum{
+	font-weight:bold;
+}
+	</style>
+</head>
+<body>
+	<form>
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<input id="n50000" type="number" value="0" oninput="updateSum()"/>500<br/>
+					</td>
+					<td id="s50000" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n20000" type="number" value="0" oninput="updateSum()"/>200<br/>
+					</td>
+					<td id="s20000" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n10000" type="number" value="0" oninput="updateSum()"/>100<br/>
+					</td>
+					<td id="s10000" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n5000" type="number" value="0" oninput="updateSum()"/>50<br/>
+					</td>
+					<td id="s5000" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n2000" type="number" value="0" oninput="updateSum()"/>20<br/>
+					</td>
+					<td id="s2000" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n1000" type="number" value="0" oninput="updateSum()"/>10<br/>
+					</td>
+					<td id="s1000" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n500" type="number" value="0" oninput="updateSum()"/>5<br/>
+					</td>
+					<td id="s500" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n200" type="number" value="0" oninput="updateSum()"/>2<br/>
+					</td>
+					<td id="s200" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n100" type="number" value="0" oninput="updateSum()"/>1<br/>
+					</td>
+					<td id="s100" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n50" type="number" value="0" oninput="updateSum()"/>0.50<br/>
+					</td>
+					<td id="s50" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n20" type="number" value="0" oninput="updateSum()"/>0.20<br/>
+					</td>
+					<td id="s20" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n10" type="number" value="0" oninput="updateSum()"/>0.10<br/>
+					</td>
+					<td id="s10" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n5" type="number" value="0" oninput="updateSum()"/>0.05<br/>
+					</td>
+					<td id="s5" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n2" type="number" value="0" oninput="updateSum()"/>0.02<br/>
+					</td>
+					<td id="s2" class="sum single-sum"></td>
+				</tr>
+				<tr>
+					<td>
+						<input id="n1" type="number" value="0" oninput="updateSum()"/>0.01<br/>
+					</td>
+					<td id="s1" class="sum single-sum"></td>
+				</tr>
+			</tbody>
+		</table>
+		<input type="reset" value="reset"/>
+	</form>
+	<p id="sum">0</p>
+
+  <script>
+    function updateSum() {
+      var n50000 = parseFloat(document.getElementById('n50000').value) || 0;
+      var n20000 = parseFloat(document.getElementById('n20000').value) || 0;
+      var n10000 = parseFloat(document.getElementById('n10000').value) || 0;
+      var n5000 = parseFloat(document.getElementById('n5000').value) || 0;
+      var n2000 = parseFloat(document.getElementById('n2000').value) || 0;
+      var n1000 = parseFloat(document.getElementById('n1000').value) || 0;
+      var n500 = parseFloat(document.getElementById('n500').value) || 0;
+      var n200 = parseFloat(document.getElementById('n200').value) || 0;
+      var n100 = parseFloat(document.getElementById('n100').value) || 0;
+      var n50 = parseFloat(document.getElementById('n50').value) || 0;
+      var n20 = parseFloat(document.getElementById('n20').value) || 0;
+      var n10 = parseFloat(document.getElementById('n10').value) || 0;
+      var n5 = parseFloat(document.getElementById('n5').value) || 0;
+      var n2 = parseFloat(document.getElementById('n2').value) || 0;
+      var n1 = parseFloat(document.getElementById('n1').value) || 0;
+
+      var sum = n50000*500 + n20000*200 + n10000*100 + n5000*50 + n2000*20 + n1000*10 + n500*5 + n200*2 + n100*1 + n50*.5 + n20*0.2 + n10*.1 + n5*.05 + n2*.02 + n1*.01;
+      
+      var sum50000 = n50000*500;
+      var sum20000 = n20000*200;
+      var sum10000 = n10000*100;
+      var sum5000  = n5000*50;
+      var sum2000  = n2000*20;
+      var sum1000  = n1000*10;
+      var sum500   = n500*5;
+      var sum200   = n200*2;
+      var sum100   = n100*1;
+      var sum50    = n50*.5;
+      var sum20    = n20*.2;
+      var sum10    = n10*.1;
+      var sum5     = n5*.05;
+      var sum2     = n2*.02;
+      var sum1     = n1*.01;
+
+      document.getElementById('sum').textContent = Math.round(sum*100)/100;
+			
+      document.getElementById('s50000').textContent = Math.round(sum50000*100)/100;
+      document.getElementById('s20000').textContent = Math.round(sum20000*100)/100;
+      document.getElementById('s10000').textContent = Math.round(sum10000*100)/100;
+      document.getElementById('s5000').textContent = Math.round(sum5000*100)/100;
+      document.getElementById('s2000').textContent = Math.round(sum2000*100)/100;
+      document.getElementById('s1000').textContent = Math.round(sum1000*100)/100;
+      document.getElementById('s500').textContent = Math.round(sum500*100)/100;
+      document.getElementById('s200').textContent = Math.round(sum200*100)/100;
+      document.getElementById('s100').textContent = Math.round(sum100*100)/100;
+      document.getElementById('s50').textContent = Math.round(sum50*100)/100;
+      document.getElementById('s20').textContent = Math.round(sum20*100)/100;
+      document.getElementById('s10').textContent = Math.round(sum10*100)/100;
+      document.getElementById('s5').textContent = Math.round(sum5*100)/100;
+      document.getElementById('s2').textContent = Math.round(sum2*100)/100;
+      document.getElementById('s1').textContent = Math.round(sum1*100)/100;
+    }
+  </script>
+</body>
+</html>
+
