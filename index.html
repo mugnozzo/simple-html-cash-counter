@@ -3,8 +3,14 @@
 <head>
   <title>Simple HTML Cash Counter</title>
 	<style>
-td.sum{
+.sum{
 	font-weight:bold;
+}
+.single-sum{
+	padding-left:10px;
+}
+input[type="number"]{
+	width:50px;
 }
 	</style>
 </head>
@@ -106,7 +112,7 @@ td.sum{
 		</table>
 		<input type="reset" value="reset"/>
 	</form>
-	<p id="sum">0</p>
+	<p id="sum" class="sum">0</p>
 
   <script>
     function updateSum() {
